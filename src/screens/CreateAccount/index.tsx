@@ -1,43 +1,42 @@
 import { View, Image } from "react-native";
 import React from "react";
-import styles from "./styles";
+import * as S from "./styles";
 import LogoImage from "../../assets/logo.png";
 import { Text, Button } from "react-native-paper";
 import { grey800 } from "react-native-paper/src/styles/themes/v2/colors";
-import GoogleIcon from "../../assets/google.png";
 
 const CreateAccount = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.logoContainer}>
+    <S.Container>
+      <S.LogoContainer>
         <Image source={LogoImage} />
-        <Text style={styles.logoText} variant="displayMedium">
+        <S.LogoText variant="displayMedium">
           Kitty
-        </Text>
-      </View>
+        </S.LogoText>
+      </S.LogoContainer>
 
-      <View style={styles.descriptionContainer}>
-        <Text style={styles.descriptionTitle} variant="headlineMedium">
+      <S.DescriptionContainer>
+        <S.DescriptionTitle variant="headlineMedium">
           Create an account
-        </Text>
-        <Text style={styles.descriptionText} variant="bodyLarge">
+        </S.DescriptionTitle>
+        <S.DescriptionText variant="bodyLarge">
           Get started by creating your account to secure your data & manage on
           multiple devices anytime!
-        </Text>
-      </View>
+        </S.DescriptionText>
+      </S.DescriptionContainer>
 
-      <View style={styles.buttonContainer}>
-        <Button
-          style={styles.button}   
+      <S.ButtonContainer>
+        <S.SigninButton        
+          contentStyle={{justifyContent: 'center', alignItems: 'center'}}
           icon='google'
           mode="outlined"
           textColor={grey800}
           onPress={() => {}}
         >       
           Sign up with Google
-        </Button>
-      </View>
-    </View>
+        </S.SigninButton>
+      </S.ButtonContainer>
+    </S.Container>
   );
 };
 

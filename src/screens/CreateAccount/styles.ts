@@ -1,54 +1,50 @@
-import * as paperColor from './../../../node_modules/react-native-paper/src/styles/themes/v2/colors';
-import { StyleSheet } from "react-native";
-import themes from "../../themes";
+import * as paperColor from "./../../../node_modules/react-native-paper/src/styles/themes/v2/colors";
+import styled from "styled-components/native";
+import { Text, Button } from "react-native-paper";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: paperColor.white,
-    justifyContent: "center",    
-    alignItems: 'center'
-  },
-  
-  logoContainer: {
-    alignItems: "center",
-  },
+export const Container = styled.View`
+  flex: 1;
+  background-color: ${paperColor.white};
+  justify-content: center;
+  align-items: center;
+`;
 
-  logoText: {
-    color: paperColor.grey800,
-    marginTop: 10,
-    fontSize: 30,
-    fontWeight: 'bold'
-  },
+export const LogoContainer = styled.View`
+  align-items: center;
+`;
 
-  descriptionContainer: {
-    alignItems: "center",
-    justifyContent: 'center',
-    marginTop: 44,   
-  },
+export const LogoText = styled(Text)`
+  color: paperColor.grey800;
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+`;
 
-  descriptionTitle: {
-    letterSpacing: 0.15,
-    color: paperColor.grey800
-  },
+export const DescriptionContainer = styled.View`
+  align-items: center;
+  justify-content: center;
+  margin-top: 44px;
+`;
 
-  descriptionText: {
-    fontWeight: "400",
-    letterSpacing: 0.25,
-    textAlign: 'center',
-    width: 312,
-    marginTop: 10
-  },
-  buttonContainer: {
-    marginTop: 50,
-    width: '75%',   
-  },
+export const DescriptionTitle = styled(Text)`
+  letter-spacing: 0.15px;
+  color: ${paperColor.grey800};
+`;
 
- 
-  button: {
-      borderRadius: 4, 
-      borderColor: paperColor.grey400,
-  }
-});
+export const DescriptionText = styled(Text)`
+  font-weight: 400px;
+  letter-spacing: 0.25px;
+  text-align: center;
+  width: 312px;
+  margin-top: 10px;
+`;
 
-export default styles;
+export const ButtonContainer = styled.View`
+  margin-top: 50px;
+  width: 75%;
+`;
+
+export const SigninButton = styled(Button)`
+  border-radius: 4px;
+  border-color: ${paperColor.grey400};
+`;
