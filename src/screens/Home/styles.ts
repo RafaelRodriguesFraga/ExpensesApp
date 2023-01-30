@@ -7,7 +7,7 @@ import { Text } from "react-native-paper";
 export const SafeAreaContainer = styled.SafeAreaView`
   flex: 1;
   background=color: ${paperColor.white},
-  align-iems: center;
+  align-items: center;
 `;
 
 export const CalendarContainer = styled.View`
