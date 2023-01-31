@@ -1,5 +1,5 @@
 import { View, Image } from "react-native";
-import { Text } from "react-native-paper";
+import { Text, Button } from "react-native-paper";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as S from "./styles";
@@ -13,7 +13,7 @@ const Home = () => {
 
       <S.CashflowContainer>
         <S.ExpensesContainer>
-          <S.CasflowIcon  name="cash-multiple" />
+          <S.CasflowIcon name="cash-multiple" />
           <S.ExpensesValue>- 12,000</S.ExpensesValue>
           <S.ExpensesText variant="bodyMedium">Expenses</S.ExpensesText>
         </S.ExpensesContainer>
@@ -30,6 +30,17 @@ const Home = () => {
           <S.ExpensesText variant="bodyMedium">Income</S.ExpensesText>
         </S.IncomeContainer>
       </S.CashflowContainer>
+
+      <S.ButtonContainer>
+        <S.AddNewButton
+          mode="contained"
+          icon="plus-circle"
+          labelStyle={{fontSize: 18}}
+          contentStyle={{justifyContent: 'center', alignItems: 'center'}}
+        >
+          Add New
+        </S.AddNewButton>
+      </S.ButtonContainer>
     </S.SafeAreaContainer>
   );
 };

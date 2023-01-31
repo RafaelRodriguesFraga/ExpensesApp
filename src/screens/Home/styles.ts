@@ -1,13 +1,12 @@
 import * as paperColor from "./../../../node_modules/react-native-paper/src/styles/themes/v2/colors";
-import { StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import { Text } from "react-native-paper";
+import { Text, Button } from "react-native-paper";
 
-export const SafeAreaContainer = styled.SafeAreaView`
-  flex: 1;
+export const SafeAreaContainer = styled.View`
   background=color: ${paperColor.white},
   align-items: center;
+  justify-content: center;
 `;
 
 export const CalendarContainer = styled.View`
@@ -64,3 +63,15 @@ export const ExpensesText = styled(Text)`
 export const BalanceText = styled(Text)``;
 
 export const IncomeText = styled(Text)``;
+
+export const ButtonContainer = styled.View`
+  align-self: flex-start;
+  margin-left: 20px;
+  margin-top: 20px;
+`;
+
+export const AddNewButton = styled(Button)`
+  background-color: ${paperColor.blue500};
+  padding: 5px 2px;
+  border-radius: 20px;
+`;

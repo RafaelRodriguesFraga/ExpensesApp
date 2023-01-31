@@ -6,7 +6,7 @@ const {Navigator, Screen} = createStackNavigator();
 
 const StackRoutes = () => {
     return (
-        <Navigator initialRouteName="CreateAccount" screenOptions={{headerShown: true}}>
+        <Navigator initialRouteName="Home" screenOptions={{headerShown: true}}>
             <Screen name="CreateAccount" component={CreateAccount} options={{headerShown: false, headerTintColor: "red"}} />
             <Screen name="Home" component={Home} />
         </Navigator>
