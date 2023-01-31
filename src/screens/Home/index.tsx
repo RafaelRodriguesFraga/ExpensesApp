@@ -27,7 +27,7 @@ const Home = () => {
         <S.IncomeContainer>
           <S.CasflowIcon name="bank-outline" />
           <S.IncomeValue>70,000</S.IncomeValue>
-          <S.ExpensesText variant="bodyMedium">Income</S.ExpensesText>
+          <S.IncomeText variant="bodyMedium">Income</S.IncomeText>
         </S.IncomeContainer>
       </S.CashflowContainer>
 

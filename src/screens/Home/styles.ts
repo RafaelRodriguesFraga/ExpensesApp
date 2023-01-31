@@ -42,27 +42,35 @@ export const ExpensesValue = styled(Text)`
   font-size: 20px;
   color: ${paperColor.red600};
   font-weight: bold;
+  font-family: 'Inter_400Regular';
 `;
 
 export const BalanceValue = styled(Text)`
   font-size: 20px;
   color: ${paperColor.green600};
   font-weight: bold;
+  font-family: 'Inter_400Regular';
 `;
 
 export const IncomeValue = styled(Text)`
   font-size: 20px;
   color: ${paperColor.black};
   font-weight: bold;
+  font-family: 'Inter_400Regular';
 `;
 
 export const ExpensesText = styled(Text)`
   color: ${paperColor.grey700};
+  font-family: 'Inter_400Regular';
 `;
 
-export const BalanceText = styled(Text)``;
+export const BalanceText = styled(Text)`
+font-family: 'Inter_400Regular';
+`;
 
-export const IncomeText = styled(Text)``;
+export const IncomeText = styled(Text)`
+font-family: 'Inter_400Regular';
+`;
 
 export const ButtonContainer = styled.View`
   align-self: flex-start;

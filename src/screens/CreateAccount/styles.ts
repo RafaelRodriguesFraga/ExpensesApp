@@ -14,7 +14,7 @@ export const LogoContainer = styled.View`
 `;
 
 export const LogoText = styled(Text)`
-  color: paperColor.grey800;
+  color: ${paperColor.grey800};
   margin-top: 10px;
   font-size: 30px;
   font-weight: bold;
