@@ -4,9 +4,9 @@ import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { Text, Button } from "react-native-paper";
 
 export const SafeAreaContainer = styled.View`
-  background=color: ${paperColor.white},
+flex: 1;
+  background-color: ${paperColor.white};
   align-items: center;
-  justify-content: center;
 `;
 
 export const CalendarContainer = styled.View`

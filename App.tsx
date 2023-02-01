@@ -7,12 +7,14 @@ import {
   useFonts,
   Inter_900Black,
   Inter_400Regular,
+  Inter_700Bold
 } from "@expo-google-fonts/inter";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
     Inter_900Black,
     Inter_400Regular,
+    Inter_700Bold,
   });
 
   const preapreFont = async () => {
