@@ -1,32 +1,56 @@
 import { View, Image } from "react-native";
-import { Text, Button } from "react-native-paper";
+import { Text, Button, AnimatedFAB  } from "react-native-paper";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import { SafeAreaView } from "react-native-safe-area-context";
 import * as S from "./styles";
-import { FlatList, ScrollView } from "react-native-gesture-handler";
+import { FlatList } from "react-native-gesture-handler";
 import GroceryIcon from "../../assets/categoryIcons/Groceries.png";
 import HealthIcon from "../../assets/categoryIcons/Health.png";
+import CafeIcon from "../../assets/categoryIcons/Cafe.png";
 
-type ListProps = {
-
-}
+type ListProps = {};
 
 const Home = () => {
   const expenses = [
     {
-      date: '2023-02-02',
+      id: "1",
+      date: "TODAY",
+      total: -1125,
       items: [
-        { name: 'Eggs & Veggies', cost: 500, category: "Groceries", categoryIcon: GroceryIcon },
-        { name: 'Lunch', cost: 12.00 }
-      ]
+        {
+          name: "Eggs & Veggies",
+          cost: -500,
+          category: "Groceries",
+          categoryIcon: GroceryIcon,
+        },
+        { name: "Health", cost: -352, categoryIcon: HealthIcon },
+        {
+          name: "Hangouts with Sujay",
+          cost: -352,
+          category: "Bar & cafe",
+          categoryIcon: CafeIcon,
+        },
+      ],
     },
     {
-      date: '2023-02-01',
+      id: " 2",
+      date: "TODAY",
+      total: -1125,
       items: [
-        { name: 'Gas', cost: 25.00 },
-        { name: 'Grocery', cost: 50.00 }
-      ]
-    }
+        {
+          name: "Eggs & Veggies",
+          cost: -500,
+          category: "Groceries",
+          categoryIcon: GroceryIcon,
+        },
+        { name: "Health", cost: -352, categoryIcon: HealthIcon },
+        {
+          name: "Hangouts with Sujay",
+          cost: -352,
+          category: "Bar & cafe",
+          categoryIcon: CafeIcon,
+        },
+      ],
+    }, 
   ];
 
   return (
@@ -54,20 +78,41 @@ const Home = () => {
           <S.IncomeText variant="bodyMedium">Income</S.IncomeText>
         </S.IncomeContainer>
       </S.CashflowContainer>
+
       <FlatList
-      data={expenses}
-      keyExtractor={(item) => item.date}
-      renderItem={({ item }) => (
-        <View style={{ marginBottom: 20, borderWidth: 1 }}>
-          <Text style={{ fontWeight: 'bold' }}>{item.date}</Text>
-          {item.items.map((expense) => (
-            <Text key={expense.name}>
-              {expense.name}: {expense.cost}
-            </Text>
-          ))}
-        </View>
-      )}
-    />
+        data={expenses}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <S.ExpensesListContainer>
+            <S.DateContainer>
+              <S.DateText>{item.date}</S.DateText>
+              <S.TotalCostText>{item.total}</S.TotalCostText>
+            </S.DateContainer>
+
+            {item.items.map((expense) => (
+              <>
+                <S.ExpensesContent>
+                  <S.IconTitleContainer>
+                    <Image source={expense.categoryIcon} />
+
+                    <S.TitleSubtitleContainer>
+                      <S.ExpensesTitle>{expense.name}</S.ExpensesTitle>
+                      {expense.category && (
+                        <S.CategoryTitle>{expense.category}</S.CategoryTitle>
+                      )}
+                    </S.TitleSubtitleContainer>
+                  </S.IconTitleContainer>
+
+                  <S.CostContainer>
+                    <S.CostText>{expense.cost}</S.CostText>
+                  </S.CostContainer>
+                </S.ExpensesContent>
+              </>
+            ))}
+          </S.ExpensesListContainer>
+        )}
+      />
+
       {/* <S.ButtonContainer>
         <S.AddNewButton
           mode="contained"
