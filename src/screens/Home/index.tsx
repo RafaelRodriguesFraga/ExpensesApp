@@ -1,15 +1,43 @@
-import { View, Image } from "react-native";
-import { Text, Button, AnimatedFAB  } from "react-native-paper";
-import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import {
+  Image,
+  Platform,
+  NativeSyntheticEvent,
+  TextLayoutEventData,
+  NativeScrollEvent,
+  Animated,
+  StyleProp,
+  ViewStyle,
+  StyleSheet
+} from "react-native";
+import { Text, Button, AnimatedFAB } from "react-native-paper";
 import * as S from "./styles";
 import { FlatList } from "react-native-gesture-handler";
 import GroceryIcon from "../../assets/categoryIcons/Groceries.png";
 import HealthIcon from "../../assets/categoryIcons/Health.png";
 import CafeIcon from "../../assets/categoryIcons/Cafe.png";
+import { useState } from "react";
 
-type ListProps = {};
+type MyComponentProps = {
+  animatedValue: Animated.Value;
+  visible: boolean;
+  extended: boolean;
+  label: string;
+  animateFrom: "left" | "right";
+  style?: StyleProp<ViewStyle>;
+  iconMode: "text" | "static" | "timing";
+};
 
-const Home = () => {
+const Home = (props: MyComponentProps) => {
+  const [isExtended, setIsExtended] = useState(true);
+
+  const onScroll = (nativeEvent: NativeScrollEvent) => {
+    const currentScrollPosition = Math.floor(nativeEvent?.contentOffset?.y ?? 0);
+
+    setIsExtended(currentScrollPosition <= 0);
+  };
+
+  const fabStyle = { [props.animateFrom]: 16 };
+
   const expenses = [
     {
       id: "1",
@@ -50,7 +78,148 @@ const Home = () => {
           categoryIcon: CafeIcon,
         },
       ],
-    }, 
+    },
+    {
+      id: "1",
+      date: "TODAY",
+      total: -1125,
+      items: [
+        {
+          name: "Eggs & Veggies",
+          cost: -500,
+          category: "Groceries",
+          categoryIcon: GroceryIcon,
+        },
+        { name: "Health", cost: -352, categoryIcon: HealthIcon },
+        {
+          name: "Hangouts with Sujay",
+          cost: -352,
+          category: "Bar & cafe",
+          categoryIcon: CafeIcon,
+        },
+      ],
+    },
+    {
+      id: "1",
+      date: "TODAY",
+      total: -1125,
+      items: [
+        {
+          name: "Eggs & Veggies",
+          cost: -500,
+          category: "Groceries",
+          categoryIcon: GroceryIcon,
+        },
+        { name: "Health", cost: -352, categoryIcon: HealthIcon },
+        {
+          name: "Hangouts with Sujay",
+          cost: -352,
+          category: "Bar & cafe",
+          categoryIcon: CafeIcon,
+        },
+      ],
+    },
+    {
+      id: "1",
+      date: "TODAY",
+      total: -1125,
+      items: [
+        {
+          name: "Eggs & Veggies",
+          cost: -500,
+          category: "Groceries",
+          categoryIcon: GroceryIcon,
+        },
+        { name: "Health", cost: -352, categoryIcon: HealthIcon },
+        {
+          name: "Hangouts with Sujay",
+          cost: -352,
+          category: "Bar & cafe",
+          categoryIcon: CafeIcon,
+        },
+      ],
+    },
+    {
+      id: "1",
+      date: "TODAY",
+      total: -1125,
+      items: [
+        {
+          name: "Eggs & Veggies",
+          cost: -500,
+          category: "Groceries",
+          categoryIcon: GroceryIcon,
+        },
+        { name: "Health", cost: -352, categoryIcon: HealthIcon },
+        {
+          name: "Hangouts with Sujay",
+          cost: -352,
+          category: "Bar & cafe",
+          categoryIcon: CafeIcon,
+        },
+      ],
+    },
+    {
+      id: "1",
+      date: "TODAY",
+      total: -1125,
+      items: [
+        {
+          name: "Eggs & Veggies",
+          cost: -500,
+          category: "Groceries",
+          categoryIcon: GroceryIcon,
+        },
+        { name: "Health", cost: -352, categoryIcon: HealthIcon },
+        {
+          name: "Hangouts with Sujay",
+          cost: -352,
+          category: "Bar & cafe",
+          categoryIcon: CafeIcon,
+        },
+      ],
+    },
+    {
+      id: "1",
+      date: "TODAY",
+      total: -1125,
+      items: [
+        {
+          name: "Eggs & Veggies",
+          cost: -500,
+          category: "Groceries",
+          categoryIcon: GroceryIcon,
+        },
+        { name: "Health", cost: -352, categoryIcon: HealthIcon },
+        {
+          name: "Hangouts with Sujay",
+          cost: -352,
+          category: "Bar & cafe",
+          categoryIcon: CafeIcon,
+        },
+      ],
+    },
+    {
+      id: "1",
+      date: "TODAY",
+      total: -1125,
+      items: [
+        {
+          name: "Eggs & Veggies",
+          cost: -500,
+          category: "Groceries",
+          categoryIcon: GroceryIcon,
+        },
+        { name: "Health", cost: -352, categoryIcon: HealthIcon },
+        {
+          name: "Hangouts with Sujay",
+          cost: -352,
+          category: "Bar & cafe",
+          categoryIcon: CafeIcon,
+        },
+      ],
+    },
+    
   ];
 
   return (
@@ -82,6 +251,7 @@ const Home = () => {
       <FlatList
         data={expenses}
         keyExtractor={(item) => item.id}
+        onScroll={onScroll}
         renderItem={({ item }) => (
           <S.ExpensesListContainer>
             <S.DateContainer>
@@ -113,6 +283,19 @@ const Home = () => {
         )}
       />
 
+      <AnimatedFAB
+        icon={"plus"}
+        label={"label"}
+        extended={isExtended}
+        onPress={() => {
+          console.log("Pressed");
+        }}
+        visible={props.visible}
+        animateFrom={"right"}
+   
+        style={(styles.fabStyle)}
+      />
+
       {/* <S.ButtonContainer>
         <S.AddNewButton
           mode="contained"
@@ -126,5 +309,16 @@ const Home = () => {
     </S.SafeAreaContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+  },
+  fabStyle: {
+    bottom: 16,
+    right: 16,
+    position: 'absolute',
+  },
+});
 
 export default Home;
