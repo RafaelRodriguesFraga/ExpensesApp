@@ -3,8 +3,32 @@ import { Text, Button } from "react-native-paper";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as S from "./styles";
+import { FlatList, ScrollView } from "react-native-gesture-handler";
+import GroceryIcon from "../../assets/categoryIcons/Groceries.png";
+import HealthIcon from "../../assets/categoryIcons/Health.png";
+
+type ListProps = {
+
+}
 
 const Home = () => {
+  const expenses = [
+    {
+      date: '2023-02-02',
+      items: [
+        { name: 'Eggs & Veggies', cost: 500, category: "Groceries", categoryIcon: GroceryIcon },
+        { name: 'Lunch', cost: 12.00 }
+      ]
+    },
+    {
+      date: '2023-02-01',
+      items: [
+        { name: 'Gas', cost: 25.00 },
+        { name: 'Grocery', cost: 50.00 }
+      ]
+    }
+  ];
+
   return (
     <S.SafeAreaContainer>
       <S.CalendarContainer>
@@ -30,8 +54,21 @@ const Home = () => {
           <S.IncomeText variant="bodyMedium">Income</S.IncomeText>
         </S.IncomeContainer>
       </S.CashflowContainer>
-
-      <S.ButtonContainer>
+      <FlatList
+      data={expenses}
+      keyExtractor={(item) => item.date}
+      renderItem={({ item }) => (
+        <View style={{ marginBottom: 20, borderWidth: 1 }}>
+          <Text style={{ fontWeight: 'bold' }}>{item.date}</Text>
+          {item.items.map((expense) => (
+            <Text key={expense.name}>
+              {expense.name}: {expense.cost}
+            </Text>
+          ))}
+        </View>
+      )}
+    />
+      {/* <S.ButtonContainer>
         <S.AddNewButton
           mode="contained"
           icon="plus-circle"
@@ -40,7 +77,7 @@ const Home = () => {
         >
           Add New
         </S.AddNewButton>
-      </S.ButtonContainer>
+      </S.ButtonContainer> */}
     </S.SafeAreaContainer>
   );
 };

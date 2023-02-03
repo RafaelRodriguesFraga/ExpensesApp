@@ -5,6 +5,11 @@ const ExpensesList = () => {
     return(
         <View>
             <Text>Lista</Text>
+            <Text>Lista</Text>
+            <Text>Lista</Text>
+            <Text>Lista</Text>
+            <Text>Lista</Text>
+            <Text>Lista</Text>
         </View>
     )
 }
