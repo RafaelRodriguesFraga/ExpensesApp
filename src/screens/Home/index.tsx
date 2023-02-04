@@ -17,28 +17,11 @@ import HealthIcon from "../../assets/categoryIcons/Health.png";
 import CafeIcon from "../../assets/categoryIcons/Cafe.png";
 import { useState } from "react";
 
-type MyComponentProps = {
-  animatedValue: Animated.Value;
-  visible: boolean;
-  extended: boolean;
-  label: string;
-  animateFrom: "left" | "right";
-  style?: StyleProp<ViewStyle>;
-  iconMode: "text" | "static" | "timing";
-};
 
-const Home = (props: MyComponentProps) => {
-  const [isExtended, setIsExtended] = useState(true);
 
-  const onScroll = (nativeEvent: NativeScrollEvent) => {
-    const currentScrollPosition = Math.floor(nativeEvent?.contentOffset?.y ?? 0);
+const Home = () => {
 
-    setIsExtended(currentScrollPosition <= 0);
-  };
-
-  const fabStyle = { [props.animateFrom]: 16 };
-
-  const expenses = [
+   const expenses = [
     {
       id: "1",
       date: "TODAY",
@@ -78,147 +61,7 @@ const Home = (props: MyComponentProps) => {
           categoryIcon: CafeIcon,
         },
       ],
-    },
-    {
-      id: "1",
-      date: "TODAY",
-      total: -1125,
-      items: [
-        {
-          name: "Eggs & Veggies",
-          cost: -500,
-          category: "Groceries",
-          categoryIcon: GroceryIcon,
-        },
-        { name: "Health", cost: -352, categoryIcon: HealthIcon },
-        {
-          name: "Hangouts with Sujay",
-          cost: -352,
-          category: "Bar & cafe",
-          categoryIcon: CafeIcon,
-        },
-      ],
-    },
-    {
-      id: "1",
-      date: "TODAY",
-      total: -1125,
-      items: [
-        {
-          name: "Eggs & Veggies",
-          cost: -500,
-          category: "Groceries",
-          categoryIcon: GroceryIcon,
-        },
-        { name: "Health", cost: -352, categoryIcon: HealthIcon },
-        {
-          name: "Hangouts with Sujay",
-          cost: -352,
-          category: "Bar & cafe",
-          categoryIcon: CafeIcon,
-        },
-      ],
-    },
-    {
-      id: "1",
-      date: "TODAY",
-      total: -1125,
-      items: [
-        {
-          name: "Eggs & Veggies",
-          cost: -500,
-          category: "Groceries",
-          categoryIcon: GroceryIcon,
-        },
-        { name: "Health", cost: -352, categoryIcon: HealthIcon },
-        {
-          name: "Hangouts with Sujay",
-          cost: -352,
-          category: "Bar & cafe",
-          categoryIcon: CafeIcon,
-        },
-      ],
-    },
-    {
-      id: "1",
-      date: "TODAY",
-      total: -1125,
-      items: [
-        {
-          name: "Eggs & Veggies",
-          cost: -500,
-          category: "Groceries",
-          categoryIcon: GroceryIcon,
-        },
-        { name: "Health", cost: -352, categoryIcon: HealthIcon },
-        {
-          name: "Hangouts with Sujay",
-          cost: -352,
-          category: "Bar & cafe",
-          categoryIcon: CafeIcon,
-        },
-      ],
-    },
-    {
-      id: "1",
-      date: "TODAY",
-      total: -1125,
-      items: [
-        {
-          name: "Eggs & Veggies",
-          cost: -500,
-          category: "Groceries",
-          categoryIcon: GroceryIcon,
-        },
-        { name: "Health", cost: -352, categoryIcon: HealthIcon },
-        {
-          name: "Hangouts with Sujay",
-          cost: -352,
-          category: "Bar & cafe",
-          categoryIcon: CafeIcon,
-        },
-      ],
-    },
-    {
-      id: "1",
-      date: "TODAY",
-      total: -1125,
-      items: [
-        {
-          name: "Eggs & Veggies",
-          cost: -500,
-          category: "Groceries",
-          categoryIcon: GroceryIcon,
-        },
-        { name: "Health", cost: -352, categoryIcon: HealthIcon },
-        {
-          name: "Hangouts with Sujay",
-          cost: -352,
-          category: "Bar & cafe",
-          categoryIcon: CafeIcon,
-        },
-      ],
-    },
-    {
-      id: "1",
-      date: "TODAY",
-      total: -1125,
-      items: [
-        {
-          name: "Eggs & Veggies",
-          cost: -500,
-          category: "Groceries",
-          categoryIcon: GroceryIcon,
-        },
-        { name: "Health", cost: -352, categoryIcon: HealthIcon },
-        {
-          name: "Hangouts with Sujay",
-          cost: -352,
-          category: "Bar & cafe",
-          categoryIcon: CafeIcon,
-        },
-      ],
-    },
+    }, 
     
   ];
 
@@ -251,7 +94,6 @@ const Home = (props: MyComponentProps) => {
       <FlatList
         data={expenses}
         keyExtractor={(item) => item.id}
-        onScroll={onScroll}
         renderItem={({ item }) => (
           <S.ExpensesListContainer>
             <S.DateContainer>
@@ -281,19 +123,6 @@ const Home = (props: MyComponentProps) => {
             ))}
           </S.ExpensesListContainer>
         )}
-      />
-
-      <AnimatedFAB
-        icon={"plus"}
-        label={"label"}
-        extended={isExtended}
-        onPress={() => {
-          console.log("Pressed");
-        }}
-        visible={props.visible}
-        animateFrom={"right"}
-   
-        style={(styles.fabStyle)}
       />
 
       {/* <S.ButtonContainer>
