@@ -85,7 +85,7 @@ export const AddNewButton = styled(Button)`
   border-radius: 20px;
 `;
 
-// MANDAR PARA O EXPRENSES-LIST MAIS TARDE
+/* MOVE TO A SEPARATE COMPONENT */
 
 export const ExpensesListContainer = styled.View`
   margin-top: 16px;

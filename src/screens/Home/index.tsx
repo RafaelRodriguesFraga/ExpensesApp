@@ -15,13 +15,15 @@ const Home = () => {
       total: -1125,
       items: [
         {
+          id: "2",
           name: "Eggs & Veggies",
           cost: -500,
           category: "Groceries",
           categoryIcon: GroceryIcon,
         },
-        { name: "Health", cost: -352, categoryIcon: HealthIcon },
+        { id: "3", name: "Health", cost: -352, categoryIcon: HealthIcon },
         {
+          id: "4",
           name: "Hangouts with Sujay",
           cost: -352,
           category: "Bar & cafe",
@@ -35,13 +37,15 @@ const Home = () => {
       total: -1125,
       items: [
         {
+          id: "5",
           name: "Eggs & Veggies",
           cost: -500,
           category: "Groceries",
           categoryIcon: GroceryIcon,
         },
-        { name: "Health", cost: -352, categoryIcon: HealthIcon },
+        { id: "6", name: "Health", cost: -352, categoryIcon: HealthIcon },
         {
+          id: "7",
           name: "Hangouts with Sujay",
           cost: -352,
           category: "Bar & cafe",
@@ -89,7 +93,7 @@ const Home = () => {
 
             {item.items.map((expense) => (
               <>
-                <S.ExpensesContent key={expense.name}>
+                <S.ExpensesContent key={expense.id}>
                   <S.IconTitleContainer>
                     <Image source={expense.categoryIcon} />
 
@@ -110,15 +114,13 @@ const Home = () => {
           </S.ExpensesListContainer>
         )}
       />
-    
+
       <S.FloatingActionButton
         icon="plus-circle"
         label="Add New"
         onPress={() => console.log("Pressed")}
         color={paperColor.white}
       />
-
-      
     </S.SafeAreaContainer>
   );
 };

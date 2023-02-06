@@ -32,7 +32,4 @@ export const AvatarText = styled(Avatar.Text)`
   background-color: ${paperColor.grey200};
 `;
 
-
-
-
 export const IconsContainer = styled.View``;
