@@ -1,27 +1,14 @@
-import {
-  Image,
-  Platform,
-  NativeSyntheticEvent,
-  TextLayoutEventData,
-  NativeScrollEvent,
-  Animated,
-  StyleProp,
-  ViewStyle,
-  StyleSheet
-} from "react-native";
-import { Text, Button, AnimatedFAB } from "react-native-paper";
+import { Image, StyleSheet } from "react-native";
+import { Text, Button, FAB } from "react-native-paper";
 import * as S from "./styles";
 import { FlatList } from "react-native-gesture-handler";
 import GroceryIcon from "../../assets/categoryIcons/Groceries.png";
 import HealthIcon from "../../assets/categoryIcons/Health.png";
 import CafeIcon from "../../assets/categoryIcons/Cafe.png";
-import { useState } from "react";
-
-
+import * as paperColor from "./../../../node_modules/react-native-paper/src/styles/themes/v2/colors";
 
 const Home = () => {
-
-   const expenses = [
+  const expenses = [
     {
       id: "1",
       date: "TODAY",
@@ -43,7 +30,7 @@ const Home = () => {
       ],
     },
     {
-      id: " 2",
+      id: "2",
       date: "TODAY",
       total: -1125,
       items: [
@@ -61,8 +48,7 @@ const Home = () => {
           categoryIcon: CafeIcon,
         },
       ],
-    }, 
-    
+    },
   ];
 
   return (
@@ -103,7 +89,7 @@ const Home = () => {
 
             {item.items.map((expense) => (
               <>
-                <S.ExpensesContent>
+                <S.ExpensesContent key={expense.name}>
                   <S.IconTitleContainer>
                     <Image source={expense.categoryIcon} />
 
@@ -124,30 +110,17 @@ const Home = () => {
           </S.ExpensesListContainer>
         )}
       />
+    
+      <S.FloatingActionButton
+        icon="plus-circle"
+        label="Add New"
+        onPress={() => console.log("Pressed")}
+        color={paperColor.white}
+      />
 
-      {/* <S.ButtonContainer>
-        <S.AddNewButton
-          mode="contained"
-          icon="plus-circle"
-          labelStyle={{fontSize: 18}}
-          contentStyle={{justifyContent: 'center', alignItems: 'center'}}
-        >
-          Add New
-        </S.AddNewButton>
-      </S.ButtonContainer> */}
+      
     </S.SafeAreaContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-  },
-  fabStyle: {
-    bottom: 16,
-    right: 16,
-    position: 'absolute',
-  },
-});
 
 export default Home;

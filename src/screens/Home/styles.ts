@@ -1,7 +1,7 @@
 import * as paperColor from "./../../../node_modules/react-native-paper/src/styles/themes/v2/colors";
 import styled from "styled-components/native";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import { Text, Button } from "react-native-paper";
+import { Text, Button, FAB } from "react-native-paper";
 
 export const SafeAreaContainer = styled.View`
   flex: 1;
@@ -113,10 +113,9 @@ export const DateText = styled(Text)`
 export const TotalCostText = styled(DateText)``;
 
 export const ExpensesContent = styled.View`
-flex-direction: row;
-justify-content: space-between;
-margin-top: 15px;
-
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
 `;
 
 export const IconTitleContainer = styled.View`
@@ -124,7 +123,6 @@ export const IconTitleContainer = styled.View`
   justify-content: center;
   align-items: center;
 `;
-
 
 export const TitleSubtitleContainer = styled.View`
   margin-left: 10px;
@@ -140,11 +138,20 @@ export const CategoryTitle = styled(Text)`
 `;
 
 export const CostContainer = styled.View`
-   justify-content: center;
+  justify-content: center;
   align-items: center;
 `;
 
 export const CostText = styled(Text)`
   color: ${paperColor.red600};
+`;
+
+export const FloatingActionButton = styled(FAB)`
+  background-color: ${paperColor.blue500};
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 16px;
+  border-radius: 44px;
  
 `;
