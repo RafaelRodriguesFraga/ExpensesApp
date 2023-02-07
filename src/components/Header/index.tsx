@@ -41,7 +41,7 @@ const Header = (props: HeaderProps) => {
 
       {props.hasMoreIcon && (
         <S.AppbarAction icon="dots-vertical" size={32} onPress={() => {}} />
-      )}
+      )}    
     </S.AppbarHeader>   
   );
 };

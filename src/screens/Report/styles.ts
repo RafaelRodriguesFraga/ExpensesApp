@@ -1,17 +1,7 @@
 import styled from "styled-components/native";
 import * as paperColor from "./../../../node_modules/react-native-paper/src/styles/themes/v2/colors";
 import { Text as PaperText, FAB } from "react-native-paper";
-
-type TextProps = {
-  fontWeight?: string;
-  color?: string;
-  fontSize?: number;
-  letterSpacing?: number;
-  textTransform?: string;
-  alignSelf?: string;
-  marginTop?: number;
-  fontFamily?: string;
-};
+import { TextProps } from "../../shared/TextProps";
 
 export const Container = styled.View`
   flex: 1;
