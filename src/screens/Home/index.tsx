@@ -6,8 +6,17 @@ import GroceryIcon from "../../assets/categoryIcons/Groceries.png";
 import HealthIcon from "../../assets/categoryIcons/Health.png";
 import CafeIcon from "../../assets/categoryIcons/Cafe.png";
 import * as paperColor from "./../../../node_modules/react-native-paper/src/styles/themes/v2/colors";
+import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
+  const navigation = useNavigation();
+
+  const handleNavigateToAddNew = () => {
+
+    // TO DO: FIX THISs
+    navigation.navigate("AddNew");
+  }
+
   const expenses = [
     {
       id: "1",
@@ -15,15 +24,15 @@ const Home = () => {
       total: -1125,
       items: [
         {
-          id: "2",
+          id: "70",
           name: "Eggs & Veggies",
           cost: -500,
           category: "Groceries",
           categoryIcon: GroceryIcon,
         },
-        { id: "3", name: "Health", cost: -352, categoryIcon: HealthIcon },
+        { id: "4", name: "Health", cost: -352, categoryIcon: HealthIcon },
         {
-          id: "4",
+          id: "5",
           name: "Hangouts with Sujay",
           cost: -352,
           category: "Bar & cafe",
@@ -37,15 +46,15 @@ const Home = () => {
       total: -1125,
       items: [
         {
-          id: "5",
+          id: "6",
           name: "Eggs & Veggies",
           cost: -500,
           category: "Groceries",
           categoryIcon: GroceryIcon,
         },
-        { id: "6", name: "Health", cost: -352, categoryIcon: HealthIcon },
+        { id: "7", name: "Health", cost: -352, categoryIcon: HealthIcon },
         {
-          id: "7",
+          id: "8",
           name: "Hangouts with Sujay",
           cost: -352,
           category: "Bar & cafe",
@@ -118,7 +127,7 @@ const Home = () => {
       <S.FloatingActionButton
         icon="plus-circle"
         label="Add New"
-        onPress={() => console.log("Pressed")}
+        onPress={handleNavigateToAddNew}
         color={paperColor.white}
       />
     </S.SafeAreaContainer>
