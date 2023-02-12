@@ -15,8 +15,11 @@ import LaundryIcon from "../../assets/categoryIcons/Laundry.png";
 import LiquorIcon from "../../assets/categoryIcons/Liquor.png";
 import RestaurantIcon from "../../assets/categoryIcons/Restaurant.png";
 import CafeIcon from "../../assets/categoryIcons/Cafe.png";
+import { useNavigation } from "@react-navigation/native";
 
 const AddExpense = () => {
+  const navigation = useNavigation();
+
   const [categoryText, setCategoryText] = useState("");
   const [amount, setAmount] = useState(0);
   const [description, setDescription] = useState("");
@@ -31,6 +34,11 @@ const AddExpense = () => {
     bottomSheetRef.current?.snapToIndex(index);
     setIsOpen(true);
   }, []);
+
+  const handleToAddCategory = () => {
+    // TODO Typecheck this
+    navigation.navigate("AddCategory");
+  };
 
   const typeList = [
     {
@@ -159,7 +167,7 @@ const AddExpense = () => {
           <BottomSheetView>
             <S.Text
               alignSelf="center"
-              marginTop={10}  
+              marginTop={10}
               fontFamily="Inter_400Regular"
               textTransform="uppercase"
               letterSpacing={1.5}
@@ -181,7 +189,7 @@ const AddExpense = () => {
             />
 
             <S.ButtonContainer>
-              <Button
+              <S.AddNewCategoryButton
                 mode="outlined"
                 labelStyle={{
                   color: paperColor.blue600,
@@ -189,9 +197,10 @@ const AddExpense = () => {
                   fontWeight: "bold",
                 }}
                 style={{ borderRadius: 5 }}
+
               >
                 Add new category
-              </Button>
+              </S.AddNewCategoryButton>
             </S.ButtonContainer>
           </BottomSheetView>
         </BottomSheet>

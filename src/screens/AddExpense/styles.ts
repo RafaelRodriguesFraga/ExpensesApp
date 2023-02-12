@@ -61,3 +61,7 @@ export const ButtonContainer = styled.View`
   align-items: center;
   margin-top: 25px;
 `;
+
+export const AddNewCategoryButton = styled(Button)`
+  border-radius: 5px;
+`;
