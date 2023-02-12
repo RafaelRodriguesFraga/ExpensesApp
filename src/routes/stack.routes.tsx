@@ -6,14 +6,14 @@ import CreateAccount from "../screens/CreateAccount";
 import Home from "../screens/Home";
 import TabRoutes from "./tab.routes";
 import * as paperColor from "../../node_modules/react-native-paper/src/styles/themes/v2/colors";
-
+import AddCategory from "../screens/AddCategory";
 
 const { Navigator, Screen } = createStackNavigator();
 
 const StackRoutes = () => {
   return (
     <Navigator
-      initialRouteName="TabRoutes"
+      initialRouteName="AddCategory"
       screenOptions={{ headerShown: true }}
     >
       <Screen
@@ -26,7 +26,11 @@ const StackRoutes = () => {
         component={AddExpense}
         options={{
           header: (props) => (
-            <StackHeader title="Add New" backgroundColor={paperColor.grey200} {...props} />
+            <StackHeader
+              title="Add New"
+              backgroundColor={paperColor.grey200}
+              {...props}
+            />
           ),
         }}
       />
@@ -34,6 +38,20 @@ const StackRoutes = () => {
         name="TabRoutes"
         component={TabRoutes}
         options={{ headerShown: false }}
+      />
+
+      <Screen
+        name="AddCategory"
+        component={AddCategory}
+        options={{
+          header: (props) => (
+            <StackHeader
+              title="Add new category"
+              backgroundColor={paperColor.grey200}
+              {...props}
+            />
+          ),
+        }}
       />
     </Navigator>
   );
