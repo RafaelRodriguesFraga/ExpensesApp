@@ -1,6 +1,6 @@
 import CafeIcon from "../assets/categoryIcons/Cafe.png";
 import HealthIcon from "../assets/categoryIcons/Health.png";
-import CommuteIcon from "../assets/categoryIcons/Health.png";
+import PartyIcon from "../assets/categoryIcons/Party.png";
 import GroceryIcon from "../assets/categoryIcons/Groceries.png";
 import GiftsIcon from "../assets/categoryIcons/Gifts.png";
 import ElectronicsIcon from "../assets/categoryIcons/Electronics.png";
@@ -21,7 +21,7 @@ import TransportationIcon from "../assets/categoryIcons/Transportation.png";
 export {
     CafeIcon,
     HealthIcon,
-    CommuteIcon,
+    PartyIcon,
     GroceryIcon,
     GiftsIcon,
     ElectronicsIcon,

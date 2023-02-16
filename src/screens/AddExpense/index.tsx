@@ -66,7 +66,7 @@ const AddExpense = () => {
 
     {
       name: "Commute",
-      icon: Icon.CommuteIcon,
+      icon: Icon.PartyIcon,
     },
 
     {

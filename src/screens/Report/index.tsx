@@ -4,7 +4,7 @@ import * as S from "./styles";
 import { Text, Button, FAB } from "react-native-paper";
 import { FlatList } from "react-native-gesture-handler";  
 
-import * as Icon from "../../shared/icons";
+import * as Icon from "../../shared/Icons";
 import * as paperColor from "./../../../node_modules/react-native-paper/src/styles/themes/v2/colors";
 
 const Report = () => {

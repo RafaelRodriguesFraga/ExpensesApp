@@ -1,4 +1,9 @@
-import { Button, IconButton, TextInput } from "react-native-paper";
+import {
+  Button,
+  IconButton,
+  TextInput as PaperTextInput,
+  Text as PaperText,
+} from "react-native-paper";
 import styled from "styled-components/native";
 import * as paperColor from "./../../../node_modules/react-native-paper/src/styles/themes/v2/colors";
 
@@ -21,7 +26,7 @@ export const AddCategoryButton = styled(IconButton)`
   border-color: ${paperColor.blue600};
 `;
 
-export const Text = styled(TextInput)`
+export const TextInput = styled(PaperTextInput)`
   flex: 1;
   margin-bottom: 10px;
   margin-left: 10px;
@@ -37,5 +42,18 @@ export const AddNewCategoryButton = styled(Button)`
   margin-left: 16px;
   margin-right: 16px;
   background-color: ${paperColor.blue600};
+`;
 
+export const CategoryButton = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: flex-start;
+  margin: 12px 26px 12px; 26px;
+`;
+
+export const Text = styled(PaperText)`
+align-self: center;
+margin-top: 10px;
+font-family: Inter_400Regular;
+text-transform: uppercase;
+letter-spacing: 1.5px;
 `;
