@@ -6,15 +6,7 @@ import * as S from "./styles";
 import { Keyboard, FlatList, Image, View } from "react-native";
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 
-import HealthIcon from "../../assets/categoryIcons/Health.png";
-import CommuteIcon from "../../assets/categoryIcons/Health.png";
-import GroceryIcon from "../../assets/categoryIcons/Groceries.png";
-import GiftsIcon from "../../assets/categoryIcons/Gifts.png";
-import EletronicsIcon from "../../assets/categoryIcons/Electronics.png";
-import LaundryIcon from "../../assets/categoryIcons/Laundry.png";
-import LiquorIcon from "../../assets/categoryIcons/Liquor.png";
-import RestaurantIcon from "../../assets/categoryIcons/Restaurant.png";
-import CafeIcon from "../../assets/categoryIcons/Cafe.png";
+import * as Icon from "../../shared/Icons";
 import { useNavigation } from "@react-navigation/native";
 
 const AddExpense = () => {
@@ -54,47 +46,47 @@ const AddExpense = () => {
   const categories = [
     {
       name: "Grocery",
-      icon: GroceryIcon,
+      icon: Icon.GroceryIcon,
     },
 
     {
       name: "Gifts",
-      icon: GiftsIcon,
+      icon: Icon.GiftsIcon,
     },
 
     {
       name: "Bar & Cafe",
-      icon: CafeIcon,
+      icon: Icon.CafeIcon,
     },
 
     {
       name: "Health",
-      icon: HealthIcon,
+      icon: Icon.HealthIcon,
     },
 
     {
       name: "Commute",
-      icon: CommuteIcon,
+      icon: Icon.CommuteIcon,
     },
 
     {
       name: "Eletronics",
-      icon: EletronicsIcon,
+      icon: Icon.ElectronicsIcon,
     },
 
     {
       name: "Laundry",
-      icon: LaundryIcon,
+      icon: Icon.LaundryIcon,
     },
 
     {
       name: "Liquor",
-      icon: LiquorIcon,
+      icon: Icon.LiquorIcon,
     },
 
     {
       name: "Restaurant",
-      icon: RestaurantIcon,
+      icon: Icon.RestaurantIcon,
     },
   ];
   return (

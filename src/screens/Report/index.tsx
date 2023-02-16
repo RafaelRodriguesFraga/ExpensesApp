@@ -2,20 +2,16 @@ import { Image } from "react-native";
 import React from "react";
 import * as S from "./styles";
 import { Text, Button, FAB } from "react-native-paper";
-import { FlatList } from "react-native-gesture-handler";
-import TransportationIcon from "../../assets/categoryIcons/Transportation.png";
-import HealthIcon from "../../assets/categoryIcons/Health.png";
-import GroceryIcon from "../../assets/categoryIcons/Groceries.png";
-import GiftsIcon from "../../assets/categoryIcons/Gifts.png";
-import EletronicsIcon from "../../assets/categoryIcons/Electronics.png";
-import CafeIcon from "../../assets/categoryIcons/Cafe.png";
+import { FlatList } from "react-native-gesture-handler";  
+
+import * as Icon from "../../shared/icons";
 import * as paperColor from "./../../../node_modules/react-native-paper/src/styles/themes/v2/colors";
 
 const Report = () => {
   const data = [
     {
       id: 1,
-      categoryIcon: TransportationIcon,
+      categoryIcon: Icon.TransportationIcon,
       name: "Transportation",
       totalTransactions: "32 transactions",
       totalCost: -5300,
@@ -23,7 +19,7 @@ const Report = () => {
     },
     {
       id: 2,
-      categoryIcon: HealthIcon,
+      categoryIcon: Icon.HealthIcon,
       name: "Health",
       totalTransactions: "16 transactions",
       totalCost: -3100,
@@ -31,7 +27,7 @@ const Report = () => {
     },
     {
       id: 3,
-      categoryIcon: GroceryIcon,
+      categoryIcon: Icon.GroceryIcon,
       name: "Personal",
       totalTransactions: "12 transactions",
       totalCost: -2320,
@@ -39,7 +35,7 @@ const Report = () => {
     },
     {
       id: 4,
-      categoryIcon: GiftsIcon,
+      categoryIcon: Icon.GiftsIcon,
       name: "Gifts",
       totalTransactions: "12 transactions",
       totalCost: -1440,
@@ -47,7 +43,7 @@ const Report = () => {
     },
     {
       id: 5,
-      categoryIcon: EletronicsIcon,
+      categoryIcon: Icon.ElectronicsIcon,
       name: "Transportation",
       totalTransactions: "12 transactions",
       totalCost: -800,
@@ -55,7 +51,7 @@ const Report = () => {
     },
     {
       id: 6,
-      categoryIcon: CafeIcon,
+      categoryIcon: Icon.CafeIcon,
       name: "Caffe & bar",
       totalTransactions: "12 transactions",
       totalCost: -240,
