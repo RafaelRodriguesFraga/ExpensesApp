@@ -5,6 +5,7 @@ import * as Icon from "../../shared/Icons";
 
 import * as paperColor from "./../../../node_modules/react-native-paper/src/styles/themes/v2/colors";
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
+import CategoryList from "../../components/CategoryList";
 
 const AddCategory = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ const AddCategory = () => {
   const handleChooseIcon = (id: number) => {
     console.log(`Chose icon id number ${id}`);
     setIsOpen(false);
-  }
+  };
 
   const categories = [
     {
@@ -116,7 +117,6 @@ const AddCategory = () => {
       id: 19,
       icon: Icon.DonateIcon,
     },
-
   ];
 
   return (
@@ -163,14 +163,11 @@ const AddCategory = () => {
               numColumns={4}
               data={categories}
               contentContainerStyle={{
-                marginTop: 15,      
-                alignSelf: 'center' ,  
+                marginTop: 15,
+                alignSelf: "center",
               }}
-              renderItem={({ item }) => (
-                //TODO  Change to another component
-                <S.CategoryButton activeOpacity={0.5} onPress={() => handleChooseIcon(item.id)}>
-                  <Image source={item.icon} />
-                </S.CategoryButton>
+              renderItem={({ item }) => (              
+                <CategoryList icon={item.icon} handleChooseIcon={() => handleChooseIcon(item.id)} />
               )}
             />
           </BottomSheetView>

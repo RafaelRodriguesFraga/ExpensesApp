@@ -1,3 +1,4 @@
+import { CategoryButtonProps } from './../../shared/CategoryButtonProps';
 import { TextProps } from "./../../shared/TextProps";
 import { Button, TextInput, Text as PaperText } from "react-native-paper";
 import styled from "styled-components/native";
@@ -50,6 +51,7 @@ export const Text = styled(PaperText)<TextProps>`
 `;
 
 export const CategoryButton = styled.TouchableOpacity`
+
   flex: 1;
   justify-content: center;
   align-items: center;

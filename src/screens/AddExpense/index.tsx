@@ -8,6 +8,7 @@ import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 
 import * as Icon from "../../shared/Icons";
 import { useNavigation } from "@react-navigation/native";
+import CategoryList from "../../components/CategoryList";
 
 const AddExpense = () => {
   const navigation = useNavigation();
@@ -32,6 +33,11 @@ const AddExpense = () => {
     navigation.navigate("AddCategory");
   };
 
+  const handleChooseIcon = (id: number) => {
+    console.log(`Chose icon id number ${id}`);
+    setIsOpen(false);
+  };
+
   const typeList = [
     {
       label: "Income",
@@ -45,46 +51,55 @@ const AddExpense = () => {
 
   const categories = [
     {
+      id: 1,
       name: "Grocery",
       icon: Icon.GroceryIcon,
     },
 
     {
+      id: 2,
       name: "Gifts",
       icon: Icon.GiftsIcon,
     },
 
     {
+      id: 3,
       name: "Bar & Cafe",
       icon: Icon.CafeIcon,
     },
 
     {
+      id: 4,
       name: "Health",
       icon: Icon.HealthIcon,
     },
 
     {
+      id: 5,
       name: "Commute",
       icon: Icon.PartyIcon,
     },
 
     {
+      id: 6,
       name: "Eletronics",
       icon: Icon.ElectronicsIcon,
     },
 
     {
+      id: 7,
       name: "Laundry",
       icon: Icon.LaundryIcon,
     },
 
     {
+      id: 8,
       name: "Liquor",
       icon: Icon.LiquorIcon,
     },
 
     {
+      id: 9,
       name: "Restaurant",
       icon: Icon.RestaurantIcon,
     },
@@ -172,11 +187,7 @@ const AddExpense = () => {
               data={categories}
               contentContainerStyle={{ marginTop: 15 }}
               renderItem={({ item }) => (
-                //TODO  Change to another component
-                <S.CategoryButton>
-                  <Image source={item.icon} />
-                  <S.Text marginTop={4}>{item.name}</S.Text>
-                </S.CategoryButton>
+                <CategoryList icon={item.icon} name={item.name} handleChooseIcon={() => handleChooseIcon(item.id)} />
               )}
             />
 
@@ -189,7 +200,7 @@ const AddExpense = () => {
                   fontWeight: "bold",
                 }}
                 style={{ borderRadius: 5 }}
-
+                onPress={handleToAddCategory}
               >
                 Add new category
               </S.AddNewCategoryButton>

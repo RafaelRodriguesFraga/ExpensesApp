@@ -13,7 +13,7 @@ const { Navigator, Screen } = createStackNavigator();
 const StackRoutes = () => {
   return (
     <Navigator
-      initialRouteName="AddCategory"
+      initialRouteName="TabRoutes"
       screenOptions={{ headerShown: true }}
     >
       <Screen
